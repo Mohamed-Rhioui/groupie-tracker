@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Artiste : {{.Name}}</h3>
+        <p>ID: {{.ID}}</p>
+        <p>Creation Date: {{.CreationDate}}</p>
+        <p>First Album: {{.FirstAlbum}}</p>
+        <h3>Members:</h3>
+        <ul>
+            {{range .Members}}
+            <li>/ {{.}}</li>
+            {{end}}
+        </ul>
+
+        <div class="locations">
+            <h3>Locations:</h3>
+            <ul>
+                {{range .Locations.Locations}}
+                <li>{{.}}</li>
+                {{end}}
+            </ul>
+        </div>
+
+        <div class="dates">
+            <h3>Concert Dates:</h3>
+            <ul>
+                {{range .ConcertDates.Dates}}
+                <li>{{.}}</li>
+                {{end}}
+            </ul>
+        </div>
+
+        <div class="relations">
+            <h3>Relations:</h3>
+            <ul>
+                {{range $key, $value := .Relations.RelatedArtists}}
+                <li>{{$key}}: {{$value}}</li>
+                {{end}}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

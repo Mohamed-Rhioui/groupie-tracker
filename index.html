@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Artists</h1>
+    <div class="container">
+        {{range .}}
+        <div class="card">
+            <a href="/details?ID={{.ID}}">
+                <img src="{{.Image}}" alt="{{.Name}}">
+                <h2>{{.Name}}</h2>
+            </a>
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>
